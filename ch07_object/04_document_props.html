@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Properties</title>
+    <style>
+      li {
+        margin: 8px 0;
+      }
+
+      .title {
+        color: red;
+        font-size: 2em;
+      }
+
+      .value {
+        color: blueviolet;
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <ol id="docProps"></ol>
+    <script>
+      let docPropList = "";
+      for (const prop in document) {
+        docPropList += `<li><span class="title">${prop}</span>: <span class="value">${document[prop]}</span></li>`;
+      }
+      document.getElementById("docProps").innerHTML = docPropList;
+    </script>
+  </body>
+</html>
